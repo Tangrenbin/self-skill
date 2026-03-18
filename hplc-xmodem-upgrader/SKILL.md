@@ -53,3 +53,13 @@ Stop and report if the device does not expose these prompts or if the script rep
 - `--check-only` is read-only. It validates the serial device, image path, and visible prompt without changing flash contents.
 - The script expects `pyserial`. If it is missing, install it with `python3 -m pip install --user pyserial`.
 - Prefer absolute image paths when possible.
+
+## Example Prompt
+
+Use a task-specific prompt at invocation time rather than hard-coding a fixed image path or serial port into the agent default prompt.
+
+```text
+使用 $hplc-xmodem-upgrader 把 SDK\STD_2016bin\ZCDBU-07B01-R1070A.16-2603181549.bin 烧录到 /dev/ttyUSB0，并将升级日志保存到 ./ 下。
+```
+
+If the user provides a Windows-style relative path such as `SDK\STD_2016bin\ZCDBU-07B01-R1070A.16-2603181549.bin`, normalize it to an absolute workspace path before running the script.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "hplc-xmodem-upgrader"
+  short_description: "Upgrade device firmware over USB serial"
+  default_prompt: "Use $hplc-xmodem-upgrader to flash a BIN image to a USB serial device and save the upgrade log."
